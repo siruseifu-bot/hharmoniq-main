@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 345 100% 59%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 50%;
+
+    --accent: 345 100% 59%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
+    --ring: 345 100% 59%;
+
+    --radius: 0.75rem;
+
+    --pink: 345 100% 59%;
+    --pink-light: 345 100% 70%;
+    --pink-dark: 345 80% 45%;
+    --surface: 0 0% 5%;
+    --surface-elevated: 0 0% 8%;
+
+    --gradient-pink: linear-gradient(135deg, hsl(345, 100%, 59%), hsl(345, 100%, 70%), hsl(345, 100%, 59%));
+    --gradient-dark: linear-gradient(180deg, hsl(0, 0%, 2%), hsl(0, 0%, 6%));
+    --shadow-pink: 0 0 30px -5px hsla(345, 100%, 59%, 0.3);
+    --shadow-card: 0 10px 40px -10px hsla(0, 0%, 0%, 0.5);
+
+    --font-display: 'Cairo', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 345 100% 59%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 12%;
+    --sidebar-ring: 345 100% 59%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  [dir="rtl"], [lang="ar"] {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-gradient-pink {
+    background: linear-gradient(135deg, hsl(345, 100%, 59%), hsl(345, 100%, 70%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(345, 100%, 59%), hsl(345, 100%, 70%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-gold {
+    background: linear-gradient(135deg, hsl(345, 100%, 59%), hsl(345, 100%, 70%), hsl(345, 100%, 59%));
+  }
+
+  .bg-gradient-pink {
+    background: linear-gradient(135deg, hsl(345, 100%, 59%), hsl(345, 100%, 70%), hsl(345, 100%, 59%));
+  }
+
+  .border-gold {
+    border-color: hsl(345, 100%, 59%);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 30px -5px hsla(345, 100%, 59%, 0.3);
+  }
+
+  .glow-pink {
+    box-shadow: 0 0 30px -5px hsla(345, 100%, 59%, 0.3);
+  }
+
+  .glass-card {
+    background: hsla(0, 0%, 5%, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsla(345, 100%, 59%, 0.08);
+  }
+
+  @keyframes ticker {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .animate-ticker {
+    animation: ticker 20s linear infinite;
+  }
+}
